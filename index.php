@@ -22,5 +22,13 @@ $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <button type="submit" class="btn-submit">Add Task</button>
     </form>
 
+<legend>Created Tasks</legend>
+<ul>
+    <?php foreach ($tasks as $task): ?>
+        <li>
+            <?php echo htmlspecialchars($task['task']?? ''); ?><br><br>
+        </li>
+    <?php endforeach; ?>
+</ul>
 </body>
 </html>
